@@ -12,6 +12,7 @@ namespace mtMediator
         public async Task Consume(ConsumeContext<SubmitOrder> context)
         {
            Console.WriteLine("Calling SubmitOrderConsumer: {0}", context.Message.OrderId.ToString());
+
            await context.RespondAsync<OrderStatus>(new
            {
                OrderId = context.Message.OrderId,
