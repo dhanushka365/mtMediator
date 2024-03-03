@@ -26,6 +26,8 @@ namespace mtMediator
             var mediator = serviceProvider.GetRequiredService<IMediator>();
             // Generate a new Guid for the order ID
             Guid orderId = NewId.NextGuid();
+            Console.WriteLine("Order ID: {0}", orderId);
+            Console.WriteLine("Producer SubmitOrderConsumer: {0}", orderId.ToString());
             // Send a SubmitOrder message with the generated order ID
             await mediator.Send<SubmitOrder>(new
             {

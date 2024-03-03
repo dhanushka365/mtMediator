@@ -16,7 +16,7 @@ namespace mtMediator
             await context.RespondAsync<OrderStatus>(new
             {
                 OrderId = context.Message.OrderId,
-                Status = "Pending"
+                Status = "Completed"
             });
         }   
     }
